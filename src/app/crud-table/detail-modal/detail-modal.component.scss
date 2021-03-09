@@ -1,0 +1,9 @@
+mat-dialog-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .div-info {
+        height: 100%;
+        width: 50%;
+    }
+}

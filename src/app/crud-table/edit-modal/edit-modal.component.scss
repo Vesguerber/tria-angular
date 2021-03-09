@@ -1,0 +1,17 @@
+mat-dialog-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .div-info {
+        height: 100%;
+        width: 48%;
+
+        mat-form-field {
+            width: 100%;
+            textarea{
+                height: 130px;
+                
+              }
+        }
+    }
+}

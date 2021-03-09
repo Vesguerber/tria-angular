@@ -1,0 +1,7 @@
+<h1 mat-dialog-title>Tem certeza que deseja o cliente <i style="color: #ff4990">{{data.name}}</i> ?</h1>
+<p>Essa ação não poderá ser revertida</p>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button color="warn" (click)="onDeleteClick()">Excluir</button>
+  <button mat-button mat-dialog-close>Cancelar</button>
+</mat-dialog-actions>

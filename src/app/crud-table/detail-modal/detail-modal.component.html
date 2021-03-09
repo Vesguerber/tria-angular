@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>Cliente:  <i style="color: #ff4990">{{cliente.name}}</i></h1>
+<mat-dialog-content class="mat-typography">
+  <div class="div-info">
+    <p style="font-size:18px" class="mat-body-2">Nome da empresa</p>
+    <p>{{cliente.company}}</p>
+    <p style="font-size:18px" class="mat-body-2">Nome Completo do Responsável</p>
+    <p>{{cliente.name}}</p>
+    <p style="font-size:18px" class="mat-body-2">Telefone</p>
+    <p>{{cliente.phone}}</p>
+    <p style="font-size:18px" class="mat-body-2">E-mail</p>
+    <p>{{cliente.mail}}</p>
+  </div>
+  <div class="div-info">
+    <p style="font-size:18px" class="mat-body-2">Atendimento</p>
+    <p>{{cliente.createdAt | date:'dd/MM/yyyy HH:mm'}}</p>
+    <p style="font-size:18px" class="mat-body-2">Última Modificação</p>
+    <p>{{cliente.updatedAt | date:'dd/MM/yyyy HH:mm'}}</p>
+    <p style="font-size:18px" class="mat-body-2">Produtos/Serviço de interesse do cliente</p>
+    <p>{{ products[cliente.produtoId-1].name}}</p>
+    <p style="font-size:18px" class="mat-body-2">Conteúdo da Conversa:</p>
+    <p>{{cliente.notes}}</p>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Fechar</button>
+</mat-dialog-actions>

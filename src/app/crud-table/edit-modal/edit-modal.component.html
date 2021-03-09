@@ -1,0 +1,62 @@
+<form #itemForm="ngForm" (ngSubmit)="onSubmit(itemForm)">
+<h1 mat-dialog-title>Editar Cliente <i style="color: #ff4990">{{ cliente.name }}</i>
+</h1>
+<mat-dialog-content class="mat-typography">
+  <div class="div-info">
+    <mat-form-field class="example-full-width">
+      <mat-label>Nome da empresa</mat-label>
+      <input 
+        required
+        [ngModel]="cliente.company"
+        id="company" 
+        name="company"
+        type="text"
+        value="{{ cliente.company }}"
+        matInput
+        placeholder=""
+      />
+    </mat-form-field>
+    <input [ngModel]="cliente.id"  type="hidden" value="{{cliente.id}}" name="id" id="id">
+    <mat-form-field class="example-full-width">
+      <mat-label>Nome Completo do Responsável</mat-label>
+      <input required [ngModel]="cliente.name"  id="name" name="name" type="text" value="{{ cliente.name }}" matInput placeholder="" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Telefone</mat-label>
+      <input required [ngModel]="cliente.phone"  id="phone" name="phone" type="text" value="{{ cliente.phone }}" matInput placeholder="" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>E-mail</mat-label>
+      <input required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [ngModel]="cliente.mail"  id="mail" name="mail" type="text" value="{{ cliente.mail }}" matInput placeholder="" />
+    </mat-form-field>
+  </div>
+  <div class="div-info">
+    <mat-form-field class="example-full-width">
+      <mat-label>Produtos/Serviço de interesse do cliente</mat-label>
+      <mat-select  id="produtoId"
+      name="produtoId" [(value)]="cliente.produtoId" [ngModel]="cliente.produtoId">
+        <mat-option></mat-option>
+        <mat-option [value]="option.id" *ngFor="let option of products">{{
+          option.name
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Conteúdo da Conversa</mat-label>
+      <textarea
+        type="text"
+        value="{{ cliente.notes }}"
+        matInput
+        placeholder=""
+        [ngModel]="cliente.notes"
+        id="notes"
+        name="notes"
+      ></textarea>
+    </mat-form-field>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button color="primary">Salvar</button>
+  <button mat-button mat-dialog-close>Fechar</button>
+</mat-dialog-actions>
+</form>

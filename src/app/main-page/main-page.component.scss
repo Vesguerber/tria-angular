@@ -1,0 +1,12 @@
+.content-app {
+  width: 1200px;
+  margin: 25px auto;
+}
+
+button {
+  margin: 16px 8px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
