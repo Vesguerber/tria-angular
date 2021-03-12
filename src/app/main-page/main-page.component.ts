@@ -31,7 +31,7 @@ export class MainPageComponent implements OnInit {
   async gerarPdf() {
     var hoje = new Date();
     const doc = new jsPDF();
-    doc.text("Relatório de Clientes - Tria Software", 10, 10);
+    doc.text("Relatório de Clientes", 10, 10);
     doc.setFontSize(12);
     doc.text('Gerado em: '+('0' + hoje.getDate()).slice(-2) + '/' + ('0' + (hoje.getMonth() + 1)).slice(-2) + '/' + hoje.getFullYear(), 10, 17);
     doc.setFontSize(10);
@@ -52,7 +52,7 @@ export class MainPageComponent implements OnInit {
         doc.text(this.products[valueM.produtoId-1].name, 170, yPos);
 
       });
-      doc.save("ClientesTria.pdf");
+      doc.save("Clientes.pdf");
 
     });
   }
